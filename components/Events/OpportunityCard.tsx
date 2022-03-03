@@ -37,6 +37,7 @@ import OpportunityEditForm from './OpportunityEditForm'
   }
 
 export default function OpportunityCard({
+  opportunityId,
   authorId,
   author,
   email,
@@ -96,6 +97,7 @@ export default function OpportunityCard({
     <div id={authorId} className={styles.opportunitycard}>
         {isEdit ? (
             <OpportunityEditForm
+                opportunityId={opportunityId}
                 authorId={authorId}
                 author={author}
                 email={email}

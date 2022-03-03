@@ -9,6 +9,7 @@ import { useRouter } from 'next/router'
 import { zonedTimeToUtc } from 'date-fns-tz'
 
 interface Opportunity {
+    opportunityId: string
     authorId: string
     author: string
     email: string
@@ -19,6 +20,7 @@ interface Opportunity {
   }
 
 export default function OpportunityEditForm({
+  opportunityId,
   authorId,
   author,
   email,
@@ -30,6 +32,7 @@ export default function OpportunityEditForm({
 }) {
   const router = useRouter()
   const initialValues: Opportunity = {
+    opportunityId: opportunityId,
     authorId: authorId,
     author: author,
     email: email,

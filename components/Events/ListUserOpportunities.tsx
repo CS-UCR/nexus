@@ -31,6 +31,7 @@ export default function ListUserOpportunities() {
         <motion.div layout="position" className={cardstyles.gridtall}>
           {data.opportunities.map((newOpportunity) => (
             <OpportunityCard
+            opportunityId={newOpportunity._id}
             key={newOpportunity._id}
             authorId={newOpportunity.authorId}
             author={newOpportunity.author}

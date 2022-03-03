@@ -44,6 +44,7 @@ export default async function handler(
       } = req.body
 
       await db.collection('opportunities').insertOne({
+        opportunityId: _id,
         authorId: authorId,
         author: author,
         email: email,
@@ -60,13 +61,13 @@ export default async function handler(
         error: 'Not signed in.',
       })
     }
-    res.status(200).json({})
   }
 
   if (req.method === 'PATCH') {
     if (session) {
       const {
         newOpportunityData: {
+          opportunityId,
           authorId,
           author,
           email,
@@ -78,7 +79,7 @@ export default async function handler(
       } = req.body
       await db.collection('opportunities').updateOne(
         {
-          _id
+          _id: new mongodb.ObjectId(opportunityId)
         },
         {
           $set: {
@@ -103,8 +104,8 @@ export default async function handler(
 
   if (req.method === 'DELETE') {
     if (session) {
-      const { newOpportunityData } = req.body
-      const result = await db.collection('opportunities').deleteOne({ _id })
+      const { newOpportunityData: opportunityId } = req.body
+      const result = await db.collection('opportunities').deleteOne({ _id  })
       res.status(200).json({ message: 'Success.' })
     } else {
       res.status(401).json({
