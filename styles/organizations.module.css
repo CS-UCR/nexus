@@ -1,0 +1,137 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-med);
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-med);
+}
+
+.text {
+  flex: 1;
+}
+
+.animationWrapper {
+  flex: 1;
+  max-height: 100%;
+  max-width: 100%;
+  margin: auto;
+}
+
+.animationWrapper svg {
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap-med);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.title h1 {
+  margin: 0.5rem 0;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  max-width: max-content;
+  background-color: var(--gray-100);
+  padding: 0;
+  border-radius: var(--radius);
+}
+
+/* get rid of a tag bottom padding */
+.social {
+  line-height: 1;
+  padding: var(--gap-half);
+}
+
+.social svg {
+  min-width: 25px;
+  max-width: 25px;
+  min-height: 25px;
+  max-height: 25px;
+}
+
+.social:hover {
+  color: var(--teal-800);
+}
+
+.subtitle {
+  color: var(--gray-400);
+}
+
+.memberslist {
+  padding: 0;
+  display: grid;
+  grid-template-rows: repeat(10, min-content);
+  grid-auto-flow: column;
+}
+
+.members {
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap-half);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+}
+
+.link svg {
+  min-width: 20px;
+  max-width: 20px;
+  min-height: 20px;
+  max-height: 20px;
+}
+
+.danger {
+  border: 2px solid var(--rose-100);
+  border-radius: var(--radius);
+  padding: 0 var(--gap-med) var(--gap) var(--gap-med);
+  margin: var(--gap) 0;
+}
+
+.thumbnail {
+  min-width: 75px;
+  max-width: 75px;
+  min-height: 75px;
+  max-height: 75px;
+  border-radius: 50%;
+}
+
+@media (max-width: 868px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+
+  .title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+}
